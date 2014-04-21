@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<title>DatePickerPluginAndroid</title>
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="cordova-2.7.0.js"></script>
+		<script type="text/javascript" src="js/DateTimePicker.js"></script>
+		<script type="text/javascript">
+		function dateCall(intValue,id) {
+	     var error = function(message) {
+		alert(message);
+	     };
+	    var success = function(messg) {
+		$('#'+id).val(messg);
+		//alert("sucess:"+messg);
+	      };
+
+	DateTimePicker.createEvent(intValue, success, error);
+}
+		</script>
+ </head>
+	<body>
+        <!-- Start Main Page -->
+		<div data-role="page" id="login">
+			<div data-role="content">
+				<input type="date" name="txtDate" id="txtDate" onclick="dateCall('1','txtDate')" readonly>
+				<input type="date" name="txtTime" id="txtDate" onclick="dateCall('0','txtTime')" readonly>
+			</div>
+		</div>
+	</body>
+</html>
